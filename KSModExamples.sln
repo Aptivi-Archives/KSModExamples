@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31321.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld1", "Mods\HelloWorld1\HelloWorld1.csproj", "{E6DCC9BD-8942-4E77-A4FF-11BF2FA973E4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mods", "Mods", "{048225E0-280E-463A-AD6A-8FC3C59DAD12}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld2", "Mods\HelloWorld2\HelloWorld2.csproj", "{CDBAC381-58EE-459A-98A2-D9A6005F71AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorld3", "Mods\HelloWorld3\HelloWorld3.csproj", "{9BE5799B-E0F3-4E84-BB27-3FBFA284EACE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Screensavers", "Screensavers", "{ED744363-A988-4AB1-AA1D-8325C61EFE17}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "FullFade", "Screensavers\FullFade\FullFade.vbproj", "{CF2CA960-F874-43C0-8434-F95AB65EC70D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E6DCC9BD-8942-4E77-A4FF-11BF2FA973E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6DCC9BD-8942-4E77-A4FF-11BF2FA973E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6DCC9BD-8942-4E77-A4FF-11BF2FA973E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6DCC9BD-8942-4E77-A4FF-11BF2FA973E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDBAC381-58EE-459A-98A2-D9A6005F71AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDBAC381-58EE-459A-98A2-D9A6005F71AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDBAC381-58EE-459A-98A2-D9A6005F71AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDBAC381-58EE-459A-98A2-D9A6005F71AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BE5799B-E0F3-4E84-BB27-3FBFA284EACE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BE5799B-E0F3-4E84-BB27-3FBFA284EACE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BE5799B-E0F3-4E84-BB27-3FBFA284EACE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BE5799B-E0F3-4E84-BB27-3FBFA284EACE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF2CA960-F874-43C0-8434-F95AB65EC70D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF2CA960-F874-43C0-8434-F95AB65EC70D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF2CA960-F874-43C0-8434-F95AB65EC70D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF2CA960-F874-43C0-8434-F95AB65EC70D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E6DCC9BD-8942-4E77-A4FF-11BF2FA973E4} = {048225E0-280E-463A-AD6A-8FC3C59DAD12}
+		{CDBAC381-58EE-459A-98A2-D9A6005F71AD} = {048225E0-280E-463A-AD6A-8FC3C59DAD12}
+		{9BE5799B-E0F3-4E84-BB27-3FBFA284EACE} = {048225E0-280E-463A-AD6A-8FC3C59DAD12}
+		{CF2CA960-F874-43C0-8434-F95AB65EC70D} = {ED744363-A988-4AB1-AA1D-8325C61EFE17}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {77523DE5-D97B-4B36-81FE-CEFF39A8D2F6}
+	EndGlobalSection
+EndGlobal

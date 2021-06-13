@@ -1,0 +1,8 @@
+<Project>
+ <Target Name="Install" AfterTargets="Build">
+  <Message Importance="High" Text="Installing $(MSBuildProjectName).dll to $(HOME)/KSMods..." Condition=" '$(OS)' != 'Windows_NT' " />
+  <Message Importance="High" Text="Installing $(MSBuildProjectName).dll to $(USERPROFILE)\KSMods..." Condition=" '$(OS)' == 'Windows_NT' " />
+  <Copy SourceFiles="$(MSBuildProjectDirectory)/../../Output/$(MSBuildProjectName).dll" DestinationFolder="$(HOME)/KSMods/" Condition=" '$(OS)' != 'Windows_NT' " />
+  <Copy SourceFiles="$(MSBuildProjectDirectory)/../../Output/$(MSBuildProjectName).dll" DestinationFolder="$(USERPROFILE)/KSMods/" Condition=" '$(OS)' == 'Windows_NT' " />
+ </Target>
+</Project>
