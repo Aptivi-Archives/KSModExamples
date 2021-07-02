@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9BE5799B-E0F3-4E84-BB27-3FBFA284EACE}</ProjectGuid>
+    <ProjectGuid>{6BDA9FDA-2BEC-4540-BEF3-09EC8CA883A1}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HelloWorld3</RootNamespace>
-    <AssemblyName>HelloWorld3</AssemblyName>
+    <RootNamespace>EventHandler1</RootNamespace>
+    <AssemblyName>EventHandler1</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HelloWorld3.cs" />
+    <Compile Include="EventHandler1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
