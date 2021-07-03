@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventHandler2", "Mods\Event
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventHandler3", "Mods\EventHandler3\EventHandler3.csproj", "{1C304B20-41F0-4FCB-83A0-11F704D8B5CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeepSynth", "Mods\BeepSynth\BeepSynth.csproj", "{3A55CB16-5E3A-4084-9B9F-B66B0C4C8B32}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{1C304B20-41F0-4FCB-83A0-11F704D8B5CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C304B20-41F0-4FCB-83A0-11F704D8B5CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C304B20-41F0-4FCB-83A0-11F704D8B5CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A55CB16-5E3A-4084-9B9F-B66B0C4C8B32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A55CB16-5E3A-4084-9B9F-B66B0C4C8B32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A55CB16-5E3A-4084-9B9F-B66B0C4C8B32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A55CB16-5E3A-4084-9B9F-B66B0C4C8B32}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,6 +87,7 @@ Global
 		{6BDA9FDA-2BEC-4540-BEF3-09EC8CA883A1} = {048225E0-280E-463A-AD6A-8FC3C59DAD12}
 		{5B37BC28-3A38-4464-95D9-2CD4233C510E} = {048225E0-280E-463A-AD6A-8FC3C59DAD12}
 		{1C304B20-41F0-4FCB-83A0-11F704D8B5CF} = {048225E0-280E-463A-AD6A-8FC3C59DAD12}
+		{3A55CB16-5E3A-4084-9B9F-B66B0C4C8B32} = {048225E0-280E-463A-AD6A-8FC3C59DAD12}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {77523DE5-D97B-4B36-81FE-CEFF39A8D2F6}
