@@ -49,7 +49,7 @@
       <Version>2021.5.1</Version>
     </PackageReference>
     <PackageReference Include="KS">
-      <Version>0.0.16.4</Version>
+      <Version>0.0.16.5</Version>
     </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
