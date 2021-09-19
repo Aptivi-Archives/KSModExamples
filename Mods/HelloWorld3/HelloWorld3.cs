@@ -3,7 +3,7 @@
  * 
  * Name: HelloWorld3.cs
  * Description: Entry point for the HelloWorld3 mod
- * KS Version: 0.0.16
+ * KS Version: 0.0.20
  * 
  * History:
  * 
@@ -48,8 +48,8 @@ namespace HelloWorld3
             Name = "Hello World";
             ModPart = "Multiple commands";
             Version = "1.0.0";
-            Commands = new Dictionary<string, CommandInfo> { { "sayhello", new CommandInfo("sayhello", CommandType.ShellCommandType.Shell, "Say Hello", false, 0) },
-                                                             { "goodbye", new CommandInfo("goodbye", CommandType.ShellCommandType.Shell, "Say Goodbye", false, 0) } };
+            Commands = new Dictionary<string, CommandInfo> { { "sayhello", new CommandInfo("sayhello", ShellCommandType.Shell, "Say Hello", "", false, 0, null) },
+                                                             { "goodbye", new CommandInfo("goodbye", ShellCommandType.Shell, "Say Goodbye", "", false, 0, null) } };
 
             TextWriterColor.W("Hello World!", true, ColorTools.ColTypes.Neutral);
         }

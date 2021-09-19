@@ -3,7 +3,7 @@
  * 
  * Name: Argument2.cs
  * Description: Entry point for the Argument2 mod
- * KS Version: 0.0.16
+ * KS Version: 0.0.20
  * 
  * History:
  * 
@@ -63,7 +63,7 @@ namespace Argument2
             Name = "Argument2";
             ModPart = "Main";
             Version = "1.0.0";
-            Commands = new Dictionary<string, CommandInfo> { { "say", new CommandInfo("say", CommandType.ShellCommandType.Shell, "Say a word", true, 1) } };
+            Commands = new Dictionary<string, CommandInfo> { { "say", new CommandInfo("say", ShellCommandType.Shell, "Say a word", "<word>", true, 1, null) } };
         }
 
         public void StopMod()

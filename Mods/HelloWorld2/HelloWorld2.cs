@@ -3,7 +3,7 @@
  * 
  * Name: HelloWorld2.cs
  * Description: Entry point for the HelloWorld2 mod
- * KS Version: 0.0.16
+ * KS Version: 0.0.20
  * 
  * History:
  * 
@@ -45,7 +45,7 @@ namespace HelloWorld2
             Name = "Hello World";
             ModPart = "Command";
             Version = "1.0.0";
-            Commands = new Dictionary<string, CommandInfo> { { "hello", new CommandInfo("hello", CommandType.ShellCommandType.Shell, "Say Hello", false, 0) } };
+            Commands = new Dictionary<string, CommandInfo> { { "hello", new CommandInfo("hello", ShellCommandType.Shell, "Say Hello", "", false, 0, null) } };
 
             TextWriterColor.W("Hello World!", true, ColorTools.ColTypes.Neutral);
         }
