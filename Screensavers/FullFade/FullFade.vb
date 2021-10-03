@@ -12,10 +12,10 @@
 ' | EoflaOE  | 6/13/2021 | Initial release
 '
 
-Imports KS.Screensaver
 Imports KS.ThreadManager
 Imports KS.CustomDisplay
 Imports KS.ColorTools
+Imports KS
 
 Public Class FullFade
     Implements ICustomSaver

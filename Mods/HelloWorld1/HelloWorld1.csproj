@@ -38,7 +38,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <PackageReference Include="KS">
-      <Version>0.0.20-m1</Version>
+      <Version>0.0.20-m2</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
