@@ -17,7 +17,7 @@ using System.Collections.Generic;
 
 namespace EventHandler2
 {
-    public class EventHandler2 : ModParser.IScript
+    public class EventHandler2 : IScript
     {
         public Dictionary<string, CommandInfo> Commands { get; set; }
         public string Name { get; set; }

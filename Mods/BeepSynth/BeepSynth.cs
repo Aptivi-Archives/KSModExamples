@@ -23,7 +23,7 @@ using TWC = KS.TextWriterColor;
 
 namespace BeepSynth
 {
-    public class BeepSynth : ModParser.IScript
+    public class BeepSynth : IScript
     {
         public Dictionary<string, CommandInfo> Commands { get; set; }
         public string Name { get; set; }
@@ -70,7 +70,7 @@ namespace BeepSynth
             Name = "BeepSynth";
             ModPart = "Main";
             Version = "0.0.15.8";
-            Commands = new Dictionary<string, CommandInfo> { { "bsynth", new CommandInfo("bsynth", ShellCommandType.Shell, "Loads the synth file and plays it.", "<file>", true, 1, null) } };
+            Commands = new Dictionary<string, CommandInfo> { { "bsynth", new CommandInfo("bsynth", ShellCommandType.Shell, "Loads the synth file and plays it.", new[] { "<file>" }, true, 1, null) } };
         }
 
         public void StopMod()

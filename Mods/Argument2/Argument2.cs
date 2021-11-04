@@ -18,7 +18,7 @@ using System.Collections.Generic;
 
 namespace Argument2
 {
-    public class Argument2 : ModParser.IScript
+    public class Argument2 : IScript
     {
         public Dictionary<string, CommandInfo> Commands { get; set; }
         public string Name { get; set; }
@@ -63,7 +63,7 @@ namespace Argument2
             Name = "Argument2";
             ModPart = "Main";
             Version = "1.0.0";
-            Commands = new Dictionary<string, CommandInfo> { { "say", new CommandInfo("say", ShellCommandType.Shell, "Say a word", "<word>", true, 1, null) } };
+            Commands = new Dictionary<string, CommandInfo> { { "say", new CommandInfo("say", ShellCommandType.Shell, "Say a word", new[] { "<word>" }, true, 1, null) } };
         }
 
         public void StopMod()

@@ -17,7 +17,7 @@ using System.Collections.Generic;
 
 namespace HelloWorld3
 {
-    public class HelloWorld3 : ModParser.IScript
+    public class HelloWorld3 : IScript
     {
         public Dictionary<string, CommandInfo> Commands { get; set; }
         public string Name { get; set; }
@@ -48,8 +48,8 @@ namespace HelloWorld3
             Name = "Hello World";
             ModPart = "Multiple commands";
             Version = "1.0.0";
-            Commands = new Dictionary<string, CommandInfo> { { "sayhello", new CommandInfo("sayhello", ShellCommandType.Shell, "Say Hello", "", false, 0, null) },
-                                                             { "goodbye", new CommandInfo("goodbye", ShellCommandType.Shell, "Say Goodbye", "", false, 0, null) } };
+            Commands = new Dictionary<string, CommandInfo> { { "sayhello", new CommandInfo("sayhello", ShellCommandType.Shell, "Say Hello", new[] { "" }, false, 0, null) },
+                                                             { "goodbye", new CommandInfo("goodbye", ShellCommandType.Shell, "Say Goodbye", new[] { "" }, false, 0, null) } };
 
             TextWriterColor.W("Hello World!", true, ColorTools.ColTypes.Neutral);
         }

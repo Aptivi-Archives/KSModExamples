@@ -17,7 +17,7 @@ using System.Collections.Generic;
 
 namespace HelloWorld1
 {
-    class HelloWorld1 : ModParser.IScript
+    class HelloWorld1 : IScript
     {
         public Dictionary<string, CommandInfo> Commands { get; set; }
         public string Name { get; set; }
