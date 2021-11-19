@@ -36,10 +36,10 @@ namespace HelloWorld3
         {
             if (Command.Command == "sayhello")
             {
-                TextWriterColor.W("Hello World! From the \"sayhello\" command!", true, ColorTools.ColTypes.Neutral);
+                TextWriterColor.Write("Hello World! From the \"sayhello\" command!", true, ColorTools.ColTypes.Neutral);
             } else if (Command.Command == "goodbye")
             {
-                TextWriterColor.W("Goodbye World! From the \"goodbye\" command!", true, ColorTools.ColTypes.Neutral);
+                TextWriterColor.Write("Goodbye World! From the \"goodbye\" command!", true, ColorTools.ColTypes.Neutral);
             }
         }
 
@@ -51,12 +51,12 @@ namespace HelloWorld3
             Commands = new Dictionary<string, CommandInfo> { { "sayhello", new CommandInfo("sayhello", ShellCommandType.Shell, "Say Hello", new[] { "" }, false, 0, null) },
                                                              { "goodbye", new CommandInfo("goodbye", ShellCommandType.Shell, "Say Goodbye", new[] { "" }, false, 0, null) } };
 
-            TextWriterColor.W("Hello World!", true, ColorTools.ColTypes.Neutral);
+            TextWriterColor.Write("Hello World!", true, ColorTools.ColTypes.Neutral);
         }
 
         public void StopMod()
         {
-            TextWriterColor.W("Goodbye World.", true, ColorTools.ColTypes.Neutral);
+            TextWriterColor.Write("Goodbye World.", true, ColorTools.ColTypes.Neutral);
         }
     }
 }

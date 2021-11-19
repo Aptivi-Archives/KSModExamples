@@ -28,7 +28,7 @@ namespace EventHandler2
         {
             if (ev == "KernelStarted")
             {
-                TextWriterColor.W("Kernel started!", true, ColorTools.ColTypes.Neutral);
+                TextWriterColor.Write("Kernel started!", true, ColorTools.ColTypes.Neutral);
             }
         }
 

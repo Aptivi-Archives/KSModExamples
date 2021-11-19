@@ -51,9 +51,9 @@ namespace Argument2
             {
                 if (RequiredArgumentsProvided)
                 {
-                    TextWriterColor.W(eqargs[0], true, ColorTools.ColTypes.Neutral);
+                    TextWriterColor.Write(eqargs[0], true, ColorTools.ColTypes.Neutral);
                 } else {
-                    TextWriterColor.W("Say something.", true, ColorTools.ColTypes.Neutral);
+                    TextWriterColor.Write("Say something.", true, ColorTools.ColTypes.Neutral);
                 }
             }
         }

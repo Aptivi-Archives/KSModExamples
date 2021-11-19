@@ -36,7 +36,7 @@ namespace HelloWorld2
         {
             if (Command.Command == "hello")
             {
-                TextWriterColor.W("Hello World! From the \"hello\" command!", true, ColorTools.ColTypes.Neutral);
+                TextWriterColor.Write("Hello World! From the \"hello\" command!", true, ColorTools.ColTypes.Neutral);
             }
         }
 
@@ -47,12 +47,12 @@ namespace HelloWorld2
             Version = "1.0.0";
             Commands = new Dictionary<string, CommandInfo> { { "hello", new CommandInfo("hello", ShellCommandType.Shell, "Say Hello", new[] { "" }, false, 0, null) } };
 
-            TextWriterColor.W("Hello World!", true, ColorTools.ColTypes.Neutral);
+            TextWriterColor.Write("Hello World!", true, ColorTools.ColTypes.Neutral);
         }
 
         public void StopMod()
         {
-            TextWriterColor.W("Goodbye World.", true, ColorTools.ColTypes.Neutral);
+            TextWriterColor.Write("Goodbye World.", true, ColorTools.ColTypes.Neutral);
         }
     }
 }

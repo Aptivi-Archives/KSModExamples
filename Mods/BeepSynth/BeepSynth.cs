@@ -60,7 +60,7 @@ namespace BeepSynth
                 }
                 else
                 {
-                    TWC.W("Provide a synth file.", true, ColorTools.ColTypes.Neutral);
+                    TWC.Write("Provide a synth file.", true, ColorTools.ColTypes.Neutral);
                 }
             }
         }
@@ -117,7 +117,7 @@ namespace BeepSynth
                                 catch (Exception ex)
                                 {
                                     Debug.Wdbg(DebugLevel.E, "Not a comment and not a synth line. ({0}) {1}", FStreamLine, ex.Message);
-                                    TWC.W("Failed to probe a synth line: {0}", true, ColorTools.ColTypes.Error, ex.Message);
+                                    TWC.Write("Failed to probe a synth line: {0}", true, ColorTools.ColTypes.Error, ex.Message);
                                 }
                             }
                         }
@@ -126,13 +126,13 @@ namespace BeepSynth
                     else
                     {
                         Debug.Wdbg(DebugLevel.E, "File is not scripted");
-                        TWC.W("The file isn't a scripted synth file.", true, ColorTools.ColTypes.Error);
+                        TWC.Write("The file isn't a scripted synth file.", true, ColorTools.ColTypes.Error);
                     }
                 }
                 else
                 {
                     Debug.Wdbg(DebugLevel.E, "File doesn't exist");
-                    TWC.W("Scripted file {0} does not exist.".FormatString(file), true, ColorTools.ColTypes.Error);
+                    TWC.Write("Scripted file {0} does not exist.".FormatString(file), true, ColorTools.ColTypes.Error);
                 }
                 return false;
             }

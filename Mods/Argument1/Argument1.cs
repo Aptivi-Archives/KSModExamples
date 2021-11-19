@@ -40,7 +40,7 @@ namespace Argument1
             {
                 if (args.Length >= 1)
                 {
-                    TextWriterColor.W(args[0], true, ColorTools.ColTypes.Neutral);
+                    TextWriterColor.Write(args[0], true, ColorTools.ColTypes.Neutral);
                 }
             }
         }

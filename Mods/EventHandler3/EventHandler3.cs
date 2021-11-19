@@ -32,7 +32,7 @@ namespace EventHandler3
         {
             if (ev == "PostLogin")
             {
-                TextWriterColor.W("Logged in as: {0}", true, ColorTools.ColTypes.Neutral, Args[0]);
+                TextWriterColor.Write("Logged in as: {0}", true, ColorTools.ColTypes.Neutral, Args[0]);
             }
         }
 

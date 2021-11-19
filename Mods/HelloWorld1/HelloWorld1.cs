@@ -42,12 +42,12 @@ namespace HelloWorld1
             ModPart = "Main";
             Version = "1.0.0";
 
-            TextWriterColor.W("Hello World!", true, ColorTools.ColTypes.Neutral);
+            TextWriterColor.Write("Hello World!", true, ColorTools.ColTypes.Neutral);
         }
 
         public void StopMod()
         {
-            TextWriterColor.W("Goodbye World.", true, ColorTools.ColTypes.Neutral);
+            TextWriterColor.Write("Goodbye World.", true, ColorTools.ColTypes.Neutral);
         }
     }
 }

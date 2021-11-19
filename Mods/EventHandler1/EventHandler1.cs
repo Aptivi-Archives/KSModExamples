@@ -26,7 +26,7 @@ namespace EventHandler1
 
         public void InitEvents(string ev)
         {
-            TextWriterColor.W(ev, true, ColorTools.ColTypes.Neutral);
+            TextWriterColor.Write(ev, true, ColorTools.ColTypes.Neutral);
         }
 
         public void InitEvents(string ev, params object[] Args)
