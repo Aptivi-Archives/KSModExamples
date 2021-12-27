@@ -40,7 +40,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <PackageReference Include="KS">
-      <Version>0.0.20-m4</Version>
+      <Version>0.0.20-m5</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
