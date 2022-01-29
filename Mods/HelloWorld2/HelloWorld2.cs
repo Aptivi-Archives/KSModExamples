@@ -13,6 +13,9 @@
  */
 
 using KS;
+using KS.ConsoleBase;
+using KS.Modifications;
+using KS.Shell.ShellBase;
 using System.Collections.Generic;
 
 namespace HelloWorld2
@@ -45,7 +48,7 @@ namespace HelloWorld2
             Name = "Hello World";
             ModPart = "Command";
             Version = "1.0.0";
-            Commands = new Dictionary<string, CommandInfo> { { "hello", new CommandInfo("hello", ShellCommandType.Shell, "Say Hello", new[] { "" }, false, 0, null) } };
+            Commands = new Dictionary<string, CommandInfo> { { "hello", new CommandInfo("hello", ShellType.Shell, "Say Hello", new[] { "" }, false, 0, null) } };
 
             TextWriterColor.Write("Hello World!", true, ColorTools.ColTypes.Neutral);
         }

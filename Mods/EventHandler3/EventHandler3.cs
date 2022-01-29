@@ -3,7 +3,7 @@
  * 
  * Name: EventHandler3.cs
  * Description: Entry point for the EventHandler3 mod
- * KS Version: 0.0.16
+ * KS Version: 0.0.20
  * 
  * History:
  * 
@@ -13,6 +13,9 @@
  */
 
 using KS;
+using KS.ConsoleBase;
+using KS.Modifications;
+using KS.Shell.ShellBase;
 using System.Collections.Generic;
 
 namespace EventHandler3

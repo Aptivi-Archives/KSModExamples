@@ -14,6 +14,9 @@
 
 using Extensification.StringExts;
 using KS;
+using KS.ConsoleBase;
+using KS.Modifications;
+using KS.Shell.ShellBase;
 using System.Collections.Generic;
 
 namespace Argument2
@@ -63,7 +66,7 @@ namespace Argument2
             Name = "Argument2";
             ModPart = "Main";
             Version = "1.0.0";
-            Commands = new Dictionary<string, CommandInfo> { { "say", new CommandInfo("say", ShellCommandType.Shell, "Say a word", new[] { "<word>" }, true, 1, null) } };
+            Commands = new Dictionary<string, CommandInfo> { { "say", new CommandInfo("say", ShellType.Shell, "Say a word", new[] { "<word>" }, true, 1, null) } };
         }
 
         public void StopMod()

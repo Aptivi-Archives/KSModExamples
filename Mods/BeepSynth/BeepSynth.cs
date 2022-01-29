@@ -13,12 +13,14 @@
  */
 
 using Extensification.StringExts;
-using KS;
+using KS.ConsoleBase;
+using KS.Files;
+using KS.Misc.Writers.DebugWriters;
+using KS.Modifications;
+using KS.Shell.ShellBase;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using KSIO = KS.Filesystem;
-using Debug = KS.DebugWriter;
 using TWC = KS.TextWriterColor;
 
 namespace BeepSynth
@@ -56,7 +58,7 @@ namespace BeepSynth
             {
                 if (RequiredArgumentsProvided)
                 {
-                    Debug.Wdbg(DebugLevel.I, "Success: " + TryParseSynth(Args));
+                    DebugWriter.Wdbg(DebugLevel.I, "Success: " + TryParseSynth(Args));
                 }
                 else
                 {
@@ -70,7 +72,7 @@ namespace BeepSynth
             Name = "BeepSynth";
             ModPart = "Main";
             Version = "0.0.15.8";
-            Commands = new Dictionary<string, CommandInfo> { { "bsynth", new CommandInfo("bsynth", ShellCommandType.Shell, "Loads the synth file and plays it.", new[] { "<file>" }, true, 1, null) } };
+            Commands = new Dictionary<string, CommandInfo> { { "bsynth", new CommandInfo("bsynth", ShellType.Shell, "Loads the synth file and plays it.", new[] { "<file>" }, true, 1, null) } };
         }
 
         public void StopMod()
@@ -86,37 +88,37 @@ namespace BeepSynth
         {
             try
             {
-                file = KSIO.NeutralizePath(file);
-                Debug.Wdbg(DebugLevel.I, "Probing {0}...", file);
+                file = Filesystem.NeutralizePath(file);
+                DebugWriter.Wdbg(DebugLevel.I, "Probing {0}...", file);
                 if (File.Exists(file))
                 {
                     // Open the stream
                     StreamReader FStream = new StreamReader(file);
-                    Debug.Wdbg(DebugLevel.I, "Opened StreamReader(file) with the length of {0}", FStream.BaseStream.Length);
+                    DebugWriter.Wdbg(DebugLevel.I, "Opened StreamReader(file) with the length of {0}", FStream.BaseStream.Length);
 
                     // Read a line and parse it
                     string FStreamLine = FStream.ReadLine();
                     if (FStreamLine == "KS-BSynth")
                     {
                         //Comments are ignored in the file. Comment format: - <message>
-                        Debug.Wdbg(DebugLevel.I, "File is scripted");
+                        DebugWriter.Wdbg(DebugLevel.I, "File is scripted");
                         while (!FStream.EndOfStream)
                         {
                             FStreamLine = FStream.ReadLine();
-                            Debug.Wdbg(DebugLevel.I, "Line: {0}", FStreamLine);
+                            DebugWriter.Wdbg(DebugLevel.I, "Line: {0}", FStreamLine);
                             if (!FStreamLine.StartsWith("-") && !(string.IsNullOrEmpty(FStreamLine)))
                             {
                                 try
                                 {
-                                    Debug.Wdbg(DebugLevel.I, "Not a comment. Getting frequency and time...");
+                                    DebugWriter.Wdbg(DebugLevel.I, "Not a comment. Getting frequency and time...");
                                     int freq = Convert.ToInt32(FStreamLine.Remove(FStreamLine.IndexOf(",")));
                                     int ms = Convert.ToInt32(FStreamLine.Substring(FStreamLine.IndexOf(",") + 1));
-                                    Debug.Wdbg(DebugLevel.I, "Got frequency {0} Hz and time {1} ms", freq, ms);
+                                    DebugWriter.Wdbg(DebugLevel.I, "Got frequency {0} Hz and time {1} ms", freq, ms);
                                     Console.Beep(freq, ms);
                                 }
                                 catch (Exception ex)
                                 {
-                                    Debug.Wdbg(DebugLevel.E, "Not a comment and not a synth line. ({0}) {1}", FStreamLine, ex.Message);
+                                    DebugWriter.Wdbg(DebugLevel.E, "Not a comment and not a synth line. ({0}) {1}", FStreamLine, ex.Message);
                                     TWC.Write("Failed to probe a synth line: {0}", true, ColorTools.ColTypes.Error, ex.Message);
                                 }
                             }
@@ -125,13 +127,13 @@ namespace BeepSynth
                     }
                     else
                     {
-                        Debug.Wdbg(DebugLevel.E, "File is not scripted");
+                        DebugWriter.Wdbg(DebugLevel.E, "File is not scripted");
                         TWC.Write("The file isn't a scripted synth file.", true, ColorTools.ColTypes.Error);
                     }
                 }
                 else
                 {
-                    Debug.Wdbg(DebugLevel.E, "File doesn't exist");
+                    DebugWriter.Wdbg(DebugLevel.E, "File doesn't exist");
                     TWC.Write("Scripted file {0} does not exist.".FormatString(file), true, ColorTools.ColTypes.Error);
                 }
                 return false;

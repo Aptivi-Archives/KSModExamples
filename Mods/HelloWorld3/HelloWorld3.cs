@@ -13,6 +13,9 @@
  */
 
 using KS;
+using KS.ConsoleBase;
+using KS.Modifications;
+using KS.Shell.ShellBase;
 using System.Collections.Generic;
 
 namespace HelloWorld3
@@ -48,8 +51,8 @@ namespace HelloWorld3
             Name = "Hello World";
             ModPart = "Multiple commands";
             Version = "1.0.0";
-            Commands = new Dictionary<string, CommandInfo> { { "sayhello", new CommandInfo("sayhello", ShellCommandType.Shell, "Say Hello", new[] { "" }, false, 0, null) },
-                                                             { "goodbye", new CommandInfo("goodbye", ShellCommandType.Shell, "Say Goodbye", new[] { "" }, false, 0, null) } };
+            Commands = new Dictionary<string, CommandInfo> { { "sayhello", new CommandInfo("sayhello", ShellType.Shell, "Say Hello", new[] { "" }, false, 0, null) },
+                                                             { "goodbye", new CommandInfo("goodbye", ShellType.Shell, "Say Goodbye", new[] { "" }, false, 0, null) } };
 
             TextWriterColor.Write("Hello World!", true, ColorTools.ColTypes.Neutral);
         }

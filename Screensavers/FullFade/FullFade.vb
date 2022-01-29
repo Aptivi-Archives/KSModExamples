@@ -3,7 +3,7 @@
 ' 
 ' Name: FullFade.vb
 ' Description: Entry point for the FullFade screensaver
-' KS Version: 0.0.16
+' KS Version: 0.0.20
 ' 
 ' History:
 ' 
@@ -12,10 +12,10 @@
 ' | EoflaOE  | 6/13/2021 | Initial release
 '
 
-Imports KS.ThreadManager
-Imports KS.CustomDisplay
-Imports KS.ColorTools
-Imports KS
+Imports KS.ConsoleBase
+Imports KS.Misc.Screensaver
+Imports KS.Misc.Screensaver.Displays
+Imports KS.Misc.Threading
 
 Public Class FullFade
     Implements ICustomSaver
@@ -54,7 +54,7 @@ Public Class FullFade
             Dim CurrentColorRed As Integer = RedColorNum / CurrentStep
             Dim CurrentColorGreen As Integer = GreenColorNum / CurrentStep
             Dim CurrentColorBlue As Integer = BlueColorNum / CurrentStep
-            SetConsoleColor(New KS.Color($"{CurrentColorRed};{CurrentColorGreen};{CurrentColorBlue}"), True)
+            SetConsoleColor(New Color($"{CurrentColorRed};{CurrentColorGreen};{CurrentColorBlue}"), True)
             Console.Clear()
         Next
 
@@ -68,7 +68,7 @@ Public Class FullFade
             Dim CurrentColorRed As Integer = RedColorNum - ThresholdRed * CurrentStep
             Dim CurrentColorGreen As Integer = GreenColorNum - ThresholdGreen * CurrentStep
             Dim CurrentColorBlue As Integer = BlueColorNum - ThresholdBlue * CurrentStep
-            SetConsoleColor(New KS.Color($"{CurrentColorRed};{CurrentColorGreen};{CurrentColorBlue}"), True)
+            SetConsoleColor(New Color($"{CurrentColorRed};{CurrentColorGreen};{CurrentColorBlue}"), True)
             Console.Clear()
         Next
     End Sub

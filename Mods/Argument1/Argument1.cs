@@ -13,6 +13,9 @@
  */
 
 using KS;
+using KS.ConsoleBase;
+using KS.Modifications;
+using KS.Shell.ShellBase;
 using System.Collections.Generic;
 
 namespace Argument1
@@ -50,7 +53,7 @@ namespace Argument1
             Name = "Argument1";
             ModPart = "Main";
             Version = "1.0.0";
-            Commands = new Dictionary<string, CommandInfo> { { "say", new CommandInfo("say", ShellCommandType.Shell, "Say a word", new[] { "<Word>" }, true, 1, null) } };
+            Commands = new Dictionary<string, CommandInfo> { { "say", new CommandInfo("say", ShellType.Shell, "Say a word", new[] { "<Word>" }, true, 1, null) } };
         }
 
         public void StopMod()
