@@ -12,7 +12,7 @@
  * | EoflaOE  | 6/30/2021 | Initial release
  */
 
-using KS;
+using KS.Misc.Writers.ConsoleWriters;
 using KS.ConsoleBase;
 using KS.Modifications;
 using KS.Shell.ShellBase;

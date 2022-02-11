@@ -12,10 +12,10 @@
  * | EoflaOE  | 6/12/2021 | Initial release
  */
 
-using KS;
 using KS.ConsoleBase;
 using KS.Modifications;
 using KS.Shell.ShellBase;
+using KS.Misc.Writers.ConsoleWriters;
 using System.Collections.Generic;
 
 namespace HelloWorld2

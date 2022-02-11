@@ -13,10 +13,10 @@
  */
 
 using Extensification.StringExts;
-using KS;
 using KS.ConsoleBase;
 using KS.Modifications;
 using KS.Shell.ShellBase;
+using KS.Misc.Writers.ConsoleWriters;
 using System.Collections.Generic;
 
 namespace Argument2

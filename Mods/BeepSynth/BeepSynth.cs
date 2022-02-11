@@ -21,7 +21,7 @@ using KS.Shell.ShellBase;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using TWC = KS.TextWriterColor;
+using KS.Misc.Writers.ConsoleWriters;
 
 namespace BeepSynth
 {
@@ -62,7 +62,7 @@ namespace BeepSynth
                 }
                 else
                 {
-                    TWC.Write("Provide a synth file.", true, ColorTools.ColTypes.Neutral);
+                    TextWriterColor.Write("Provide a synth file.", true, ColorTools.ColTypes.Neutral);
                 }
             }
         }
@@ -119,7 +119,7 @@ namespace BeepSynth
                                 catch (Exception ex)
                                 {
                                     DebugWriter.Wdbg(DebugLevel.E, "Not a comment and not a synth line. ({0}) {1}", FStreamLine, ex.Message);
-                                    TWC.Write("Failed to probe a synth line: {0}", true, ColorTools.ColTypes.Error, ex.Message);
+                                    TextWriterColor.Write("Failed to probe a synth line: {0}", true, ColorTools.ColTypes.Error, ex.Message);
                                 }
                             }
                         }
@@ -128,13 +128,13 @@ namespace BeepSynth
                     else
                     {
                         DebugWriter.Wdbg(DebugLevel.E, "File is not scripted");
-                        TWC.Write("The file isn't a scripted synth file.", true, ColorTools.ColTypes.Error);
+                        TextWriterColor.Write("The file isn't a scripted synth file.", true, ColorTools.ColTypes.Error);
                     }
                 }
                 else
                 {
                     DebugWriter.Wdbg(DebugLevel.E, "File doesn't exist");
-                    TWC.Write("Scripted file {0} does not exist.".FormatString(file), true, ColorTools.ColTypes.Error);
+                    TextWriterColor.Write("Scripted file {0} does not exist.".FormatString(file), true, ColorTools.ColTypes.Error);
                 }
                 return false;
             }
