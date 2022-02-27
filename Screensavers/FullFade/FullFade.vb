@@ -49,7 +49,6 @@ Public Class FullFade
 
         'Fade in
         For CurrentStep As Integer = 50 To 1 Step -1
-            If Custom.CancellationPending Then Exit For
             SleepNoBlock(DelayForEachWrite, Custom)
             Dim CurrentColorRed As Integer = RedColorNum / CurrentStep
             Dim CurrentColorGreen As Integer = GreenColorNum / CurrentStep
@@ -63,7 +62,6 @@ Public Class FullFade
 
         'Fade out
         For CurrentStep As Integer = 1 To 50
-            If Custom.CancellationPending Then Exit For
             SleepNoBlock(DelayForEachWrite, Custom)
             Dim CurrentColorRed As Integer = RedColorNum - ThresholdRed * CurrentStep
             Dim CurrentColorGreen As Integer = GreenColorNum - ThresholdGreen * CurrentStep
