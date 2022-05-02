@@ -1,8 +1,29 @@
 <Project>
+  
  <Target Name="Install" AfterTargets="Build">
-  <Message Importance="High" Text="Installing $(MSBuildProjectName).dll to $(HOME)/KSMods..." Condition=" '$(OS)' != 'Windows_NT' " />
-  <Message Importance="High" Text="Installing $(MSBuildProjectName).dll to $(USERPROFILE)\KSMods..." Condition=" '$(OS)' == 'Windows_NT' " />
-  <Copy SourceFiles="$(MSBuildProjectDirectory)/../../Output/$(MSBuildProjectName).dll" DestinationFolder="$(HOME)/KSMods/" Condition=" '$(OS)' != 'Windows_NT' " />
-  <Copy SourceFiles="$(MSBuildProjectDirectory)/../../Output/$(MSBuildProjectName).dll" DestinationFolder="$(USERPROFILE)/KSMods/" Condition=" '$(OS)' == 'Windows_NT' " />
+  <!-- Variables -->
+  <PropertyGroup>
+    <!-- Root folders to get the source -->
+    <RootFolderPath>$([System.IO.Path]::GetDirectoryName($(MSBuildProjectDirectory)))</RootFolderPath>
+    <RootFolder>$([System.IO.Path]::GetFileName($(RootFolderPath)))</RootFolder>
+    <EntryPoint>$(MSBuildProjectDirectory)/../../Output/$(MSBuildProjectName).dll</EntryPoint>
+    
+    <!-- Platform-specific paths -->
+    <HomeDirectory>$(HOME)</HomeDirectory>
+    <HomeDirectory Condition="'$(OS)' == 'Windows_NT'">$(USERPROFILE)</HomeDirectory>
+    
+    <!-- Discriminate mods from custom splashes, since KS looks for $(HomeDirectory)/KSSplashes/*.dll to install custom splashes -->
+    <KSModsDirectory>$(HomeDirectory)/KSMods/</KSModsDirectory>
+    <KSSplashesDirectory>$(HomeDirectory)/KSSplashes/</KSSplashesDirectory>
+    
+    <!-- Where we put the mod -->
+    <OutputDirectory>$(KSModsDirectory)</OutputDirectory>
+    <OutputDirectory Condition="'$(RootFolder)' == 'Custom Splashes'">$(KSSplashesDirectory)</OutputDirectory>
+  </PropertyGroup>
+   
+  <!-- Install the mod or splash -->
+  <Message Importance="High" Text=" [$(RootFolder)] Installing $(MSBuildProjectName).dll to $(OutputDirectory)..."/>
+  <Copy SourceFiles="$(EntryPoint)" DestinationFolder="$(OutputDirectory)"/>
  </Target>
+
 </Project>
