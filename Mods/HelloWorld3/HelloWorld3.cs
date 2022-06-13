@@ -37,13 +37,6 @@ namespace HelloWorld3
 
         public void PerformCmd(CommandInfo Command, string Args = "")
         {
-            if (Command.Command == "sayhello")
-            {
-                TextWriterColor.Write("Hello World! From the \"sayhello\" command!", true, ColorTools.ColTypes.Neutral);
-            } else if (Command.Command == "goodbye")
-            {
-                TextWriterColor.Write("Goodbye World! From the \"goodbye\" command!", true, ColorTools.ColTypes.Neutral);
-            }
         }
 
         public void StartMod()
@@ -51,8 +44,8 @@ namespace HelloWorld3
             Name = "Hello World";
             ModPart = "Multiple commands";
             Version = "1.0.0";
-            Commands = new Dictionary<string, CommandInfo> { { "sayhello", new CommandInfo("sayhello", ShellType.Shell, "Say Hello", new[] { "" }, false, 0, null) },
-                                                             { "goodbye", new CommandInfo("goodbye", ShellType.Shell, "Say Goodbye", new[] { "" }, false, 0, null) } };
+            Commands = new Dictionary<string, CommandInfo> { { "sayhello", new CommandInfo("sayhello", ShellType.Shell, "Say Hello", new[] { "" }, false, 0, new SayHello()) },
+                                                             { "goodbye", new CommandInfo("goodbye", ShellType.Shell, "Say Goodbye", new[] { "" }, false, 0, new Goodbye()) } };
 
             TextWriterColor.Write("Hello World!", true, ColorTools.ColTypes.Neutral);
         }

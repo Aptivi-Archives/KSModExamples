@@ -3,13 +3,14 @@
  * 
  * Name: Argument1.cs
  * Description: Entry point for the Argument1 mod
- * KS Version: 0.0.20
+ * KS Version: 0.0.22
  * 
  * History:
  * 
  * | Author   | Date      | Description
  * +----------+-----------+--------------
  * | EoflaOE  | 6/30/2021 | Initial release
+ * | EoflaOE  | 6/13/2022 | Used CommandExecutor instead of interface
  */
 
 using KS.Misc.Writers.ConsoleWriters;
@@ -37,15 +38,6 @@ namespace Argument1
 
         public void PerformCmd(CommandInfo Command, string Args = "")
         {
-            char[] delim = { ' ' };
-            string[] args = Args.Split(delim, System.StringSplitOptions.RemoveEmptyEntries);
-            if (Command.Command == "say")
-            {
-                if (args.Length >= 1)
-                {
-                    TextWriterColor.Write(args[0], true, ColorTools.ColTypes.Neutral);
-                }
-            }
         }
 
         public void StartMod()
@@ -53,7 +45,7 @@ namespace Argument1
             Name = "Argument1";
             ModPart = "Main";
             Version = "1.0.0";
-            Commands = new Dictionary<string, CommandInfo> { { "say", new CommandInfo("say", ShellType.Shell, "Say a word", new[] { "<Word>" }, true, 1, null) } };
+            Commands = new Dictionary<string, CommandInfo> { { "say", new CommandInfo("say", ShellType.Shell, "Say a word", new[] { "<Word>" }, true, 1, new Say()) } };
         }
 
         public void StopMod()

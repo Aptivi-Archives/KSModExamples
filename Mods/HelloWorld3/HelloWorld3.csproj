@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Goodbye.cs" />
+    <Compile Include="SayHello.cs" />
     <Compile Include="HelloWorld3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -3,13 +3,14 @@
  * 
  * Name: HelloWorld2.cs
  * Description: Entry point for the HelloWorld2 mod
- * KS Version: 0.0.20
+ * KS Version: 0.0.22
  * 
  * History:
  * 
  * | Author   | Date      | Description
  * +----------+-----------+--------------
  * | EoflaOE  | 6/12/2021 | Initial release
+ * | EoflaOE  | 6/13/2022 | Used CommandExecutor instead of interface
  */
 
 using KS.ConsoleBase;
@@ -37,10 +38,6 @@ namespace HelloWorld2
 
         public void PerformCmd(CommandInfo Command, string Args = "")
         {
-            if (Command.Command == "hello")
-            {
-                TextWriterColor.Write("Hello World! From the \"hello\" command!", true, ColorTools.ColTypes.Neutral);
-            }
         }
 
         public void StartMod()
@@ -48,7 +45,7 @@ namespace HelloWorld2
             Name = "Hello World";
             ModPart = "Command";
             Version = "1.0.0";
-            Commands = new Dictionary<string, CommandInfo> { { "hello", new CommandInfo("hello", ShellType.Shell, "Say Hello", new[] { "" }, false, 0, null) } };
+            Commands = new Dictionary<string, CommandInfo> { { "hello", new CommandInfo("hello", ShellType.Shell, "Say Hello", new[] { "" }, false, 0, new Hello()) } };
 
             TextWriterColor.Write("Hello World!", true, ColorTools.ColTypes.Neutral);
         }

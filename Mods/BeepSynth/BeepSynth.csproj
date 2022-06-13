@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="BeepSynth.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BSynth.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Extensification">

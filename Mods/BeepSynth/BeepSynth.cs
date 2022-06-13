@@ -3,13 +3,14 @@
  * 
  * Name: BeepSynth.cs
  * Description: Entry point for the BeepSynth mod
- * KS Version: 0.0.20
+ * KS Version: 0.0.22
  * 
  * History:
  * 
  * | Author   | Date      | Description
  * +----------+-----------+--------------
  * | EoflaOE  | 7/3/2021  | Initial release
+ * | EoflaOE  | 6/13/2022 | Used CommandExecutor instead of interface
  */
 
 using Extensification.StringExts;
@@ -42,29 +43,6 @@ namespace BeepSynth
 
         public void PerformCmd(CommandInfo Command, string Args = "")
         {
-            //Variables
-            bool RequiredArgumentsProvided = true;
-            string[] eqargs = Args.SplitEncloseDoubleQuotes(" ");
-            if (eqargs != null)
-            {
-                RequiredArgumentsProvided = eqargs?.Length >= Command.MinimumArguments;
-            }
-            else if (Command.ArgumentsRequired && eqargs == null)
-            {
-                RequiredArgumentsProvided = false;
-            }
-
-            if (Command.Command == "bsynth")
-            {
-                if (RequiredArgumentsProvided)
-                {
-                    DebugWriter.Wdbg(DebugLevel.I, "Success: " + TryParseSynth(Args));
-                }
-                else
-                {
-                    TextWriterColor.Write("Provide a synth file.", true, ColorTools.ColTypes.Neutral);
-                }
-            }
         }
 
         public void StartMod()
@@ -72,7 +50,7 @@ namespace BeepSynth
             Name = "BeepSynth";
             ModPart = "Main";
             Version = "0.0.15.8";
-            Commands = new Dictionary<string, CommandInfo> { { "bsynth", new CommandInfo("bsynth", ShellType.Shell, "Loads the synth file and plays it.", new[] { "<file>" }, true, 1, null) } };
+            Commands = new Dictionary<string, CommandInfo> { { "bsynth", new CommandInfo("bsynth", ShellType.Shell, "Loads the synth file and plays it.", new[] { "<file>" }, true, 1, new BSynth()) } };
         }
 
         public void StopMod()
