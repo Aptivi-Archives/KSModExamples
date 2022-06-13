@@ -49,7 +49,7 @@ Public Class FullFade
 
         'Fade in
         For CurrentStep As Integer = 50 To 1 Step -1
-            SleepNoBlock(DelayForEachWrite, Custom)
+            SleepNoBlock(DelayForEachWrite, Threading.Thread.CurrentThread)
             Dim CurrentColorRed As Integer = RedColorNum / CurrentStep
             Dim CurrentColorGreen As Integer = GreenColorNum / CurrentStep
             Dim CurrentColorBlue As Integer = BlueColorNum / CurrentStep
@@ -58,11 +58,11 @@ Public Class FullFade
         Next
 
         'Wait until fade out
-        SleepNoBlock(3000, Custom)
+        SleepNoBlock(3000, Threading.Thread.CurrentThread)
 
         'Fade out
         For CurrentStep As Integer = 1 To 50
-            SleepNoBlock(DelayForEachWrite, Custom)
+            SleepNoBlock(DelayForEachWrite, Threading.Thread.CurrentThread)
             Dim CurrentColorRed As Integer = RedColorNum - ThresholdRed * CurrentStep
             Dim CurrentColorGreen As Integer = GreenColorNum - ThresholdGreen * CurrentStep
             Dim CurrentColorBlue As Integer = BlueColorNum - ThresholdBlue * CurrentStep
