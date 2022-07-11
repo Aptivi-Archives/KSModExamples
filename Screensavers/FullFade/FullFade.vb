@@ -3,41 +3,28 @@
 ' 
 ' Name: FullFade.vb
 ' Description: Entry point for the FullFade screensaver
-' KS Version: 0.0.20
+' KS Version: 0.0.23
 ' 
 ' History:
 ' 
 ' | Author   | Date      | Description
 ' +----------+-----------+--------------
 ' | EoflaOE  | 6/13/2021 | Initial release
+' | EoflaOE  | 7/11/2022 | Changed implementation to IScreensaver and BaseScreensaver
 '
 
 Imports KS.ConsoleBase
 Imports KS.Misc.Screensaver
-Imports KS.Misc.Screensaver.Displays
 Imports KS.Misc.Threading
 
 Public Class FullFade
-    Implements ICustomSaver
+    Inherits BaseScreensaver
+    Implements IScreensaver
 
-    Public Property Initialized As Boolean Implements ICustomSaver.Initialized
-    Public Property DelayForEachWrite As Integer Implements ICustomSaver.DelayForEachWrite
-    Public Property SaverName As String Implements ICustomSaver.SaverName
-    Public Property SaverSettings As Dictionary(Of String, Object) Implements ICustomSaver.SaverSettings
+    Public Overrides Property ScreensaverName As String
+    Public Overrides Property ScreensaverSettings As Dictionary(Of String, Object)
 
-    Public Sub InitSaver() Implements ICustomSaver.InitSaver
-        SaverName = "FullFade"
-        DelayForEachWrite = 10
-        Initialized = True
-    End Sub
-
-    Public Sub PreDisplay() Implements ICustomSaver.PreDisplay
-    End Sub
-
-    Public Sub PostDisplay() Implements ICustomSaver.PostDisplay
-    End Sub
-
-    Public Sub ScrnSaver() Implements ICustomSaver.ScrnSaver
+    Public Overrides Sub ScreensaverLogic()
         'Set thresholds and colors
         Dim RandomDriver As New Random()
         Dim RedColorNum As Integer = RandomDriver.Next(255)
@@ -49,7 +36,7 @@ Public Class FullFade
 
         'Fade in
         For CurrentStep As Integer = 50 To 1 Step -1
-            SleepNoBlock(DelayForEachWrite, Threading.Thread.CurrentThread)
+            SleepNoBlock(50, ScreensaverDisplayerThread)
             Dim CurrentColorRed As Integer = RedColorNum / CurrentStep
             Dim CurrentColorGreen As Integer = GreenColorNum / CurrentStep
             Dim CurrentColorBlue As Integer = BlueColorNum / CurrentStep
@@ -58,11 +45,11 @@ Public Class FullFade
         Next
 
         'Wait until fade out
-        SleepNoBlock(3000, Threading.Thread.CurrentThread)
+        SleepNoBlock(3000, ScreensaverDisplayerThread)
 
         'Fade out
         For CurrentStep As Integer = 1 To 50
-            SleepNoBlock(DelayForEachWrite, Threading.Thread.CurrentThread)
+            SleepNoBlock(50, ScreensaverDisplayerThread)
             Dim CurrentColorRed As Integer = RedColorNum - ThresholdRed * CurrentStep
             Dim CurrentColorGreen As Integer = GreenColorNum - ThresholdGreen * CurrentStep
             Dim CurrentColorBlue As Integer = BlueColorNum - ThresholdBlue * CurrentStep
