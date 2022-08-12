@@ -16,35 +16,12 @@ Imports KS.ConsoleBase
 Imports KS.Misc.Splash
 Imports KS.Misc.Writers.DebugWriters
 Imports KS.Misc.Writers.ConsoleWriters
+Imports KS.ConsoleBase.Colors.ColorTools
 
 Public Class ProgressText
     Implements ISplash
 
     Public Property SplashClosing As Boolean Implements ISplash.SplashClosing
-
-    Public ReadOnly Property ProgressWritePositionX As Integer Implements ISplash.ProgressWritePositionX
-        Get
-            Return 2
-        End Get
-    End Property
-
-    Public ReadOnly Property ProgressWritePositionY As Integer Implements ISplash.ProgressWritePositionY
-        Get
-            Return Console.WindowHeight - 2
-        End Get
-    End Property
-
-    Public ReadOnly Property ProgressReportWritePositionX As Integer Implements ISplash.ProgressReportWritePositionX
-        Get
-            Return 6
-        End Get
-    End Property
-
-    Public ReadOnly Property ProgressReportWritePositionY As Integer Implements ISplash.ProgressReportWritePositionY
-        Get
-            Return Console.WindowHeight - 2
-        End Get
-    End Property
 
     Public ReadOnly Property SplashName As String Implements ISplash.SplashName
         Get
@@ -73,7 +50,12 @@ Public Class ProgressText
         Console.Clear()
     End Sub
 
-    Public Sub Report(Progress As Integer, ProgressReport As String, ProgressWritePositionX As Integer, ProgressWritePositionY As Integer, ProgressReportWritePositionX As Integer, ProgressReportWritePositionY As Integer, ParamArray Vars() As Object) Implements ISplash.Report
+    Public Sub Report(Progress As Integer, ProgressReport As String, ParamArray Vars() As Object) Implements ISplash.Report
+        Dim ProgressWritePositionX As Integer = 2
+        Dim ProgressWritePositionY As Integer = Console.WindowHeight - 2
+        Dim ProgressReportWritePositionX As Integer = 6
+        Dim ProgressReportWritePositionY As Integer = Console.WindowHeight - 2
+
         Wdbg(DebugLevel.I, "Report()")
         WriteWhere($"{Progress}%", ProgressWritePositionX, ProgressWritePositionY, True, ColTypes.Progress)
         WriteWhere($">> {ProgressReport}", ProgressReportWritePositionX, ProgressReportWritePositionY, False, ColTypes.Neutral)

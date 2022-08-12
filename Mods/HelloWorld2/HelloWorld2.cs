@@ -13,11 +13,12 @@
  * | EoflaOE  | 6/13/2022 | Used CommandExecutor instead of interface
  */
 
-using KS.ConsoleBase;
 using KS.Modifications;
-using KS.Shell.ShellBase;
 using KS.Misc.Writers.ConsoleWriters;
 using System.Collections.Generic;
+using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Shells;
+using KS.ConsoleBase.Colors;
 
 namespace HelloWorld2
 {
@@ -45,7 +46,7 @@ namespace HelloWorld2
             Name = "Hello World";
             ModPart = "Command";
             Version = "1.0.0";
-            Commands = new Dictionary<string, CommandInfo> { { "hello", new CommandInfo("hello", ShellType.Shell, "Say Hello", new[] { "" }, false, 0, new Hello()) } };
+            Commands = new Dictionary<string, CommandInfo> { { "hello", new CommandInfo("hello", ShellType.Shell, "Say Hello", new CommandArgumentInfo(new[] { "" }, false, 0), new Hello()) } };
 
             TextWriterColor.Write("Hello World!", true, ColorTools.ColTypes.Neutral);
         }

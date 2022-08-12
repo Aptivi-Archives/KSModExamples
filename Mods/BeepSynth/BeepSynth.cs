@@ -14,15 +14,16 @@
  */
 
 using Extensification.StringExts;
-using KS.ConsoleBase;
 using KS.Files;
 using KS.Misc.Writers.DebugWriters;
 using KS.Modifications;
-using KS.Shell.ShellBase;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using KS.Misc.Writers.ConsoleWriters;
+using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Shells;
+using KS.ConsoleBase.Colors;
 
 namespace BeepSynth
 {
@@ -50,7 +51,7 @@ namespace BeepSynth
             Name = "BeepSynth";
             ModPart = "Main";
             Version = "0.0.15.8";
-            Commands = new Dictionary<string, CommandInfo> { { "bsynth", new CommandInfo("bsynth", ShellType.Shell, "Loads the synth file and plays it.", new[] { "<file>" }, true, 1, new BSynth()) } };
+            Commands = new Dictionary<string, CommandInfo> { { "bsynth", new CommandInfo("bsynth", ShellType.Shell, "Loads the synth file and plays it.", new CommandArgumentInfo(new[] { "<file>" }, true, 1), new BSynth()) } };
         }
 
         public void StopMod()

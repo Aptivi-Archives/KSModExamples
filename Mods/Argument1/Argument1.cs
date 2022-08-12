@@ -13,11 +13,10 @@
  * | EoflaOE  | 6/13/2022 | Used CommandExecutor instead of interface
  */
 
-using KS.Misc.Writers.ConsoleWriters;
-using KS.ConsoleBase;
 using KS.Modifications;
-using KS.Shell.ShellBase;
 using System.Collections.Generic;
+using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Shells;
 
 namespace Argument1
 {
@@ -45,7 +44,7 @@ namespace Argument1
             Name = "Argument1";
             ModPart = "Main";
             Version = "1.0.0";
-            Commands = new Dictionary<string, CommandInfo> { { "say", new CommandInfo("say", ShellType.Shell, "Say a word", new[] { "<Word>" }, true, 1, new Say()) } };
+            Commands = new Dictionary<string, CommandInfo> { { "say", new CommandInfo("say", ShellType.Shell, "Say a word", new CommandArgumentInfo(new[] { "<Word>" }, true, 1), new Say()) } };
         }
 
         public void StopMod()

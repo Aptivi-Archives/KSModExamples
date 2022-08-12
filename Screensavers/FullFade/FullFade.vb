@@ -14,6 +14,7 @@
 '
 
 Imports KS.ConsoleBase
+Imports KS.ConsoleBase.Colors
 Imports KS.Misc.Screensaver
 Imports KS.Misc.Threading
 

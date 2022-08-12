@@ -12,9 +12,9 @@
  * | EoflaOE  | 6/13/2022 | Initial release
  */
 
-using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Shell.ShellBase;
+using KS.Shell.ShellBase.Commands;
 
 namespace HelloWorld2
 {

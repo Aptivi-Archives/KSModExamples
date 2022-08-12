@@ -12,11 +12,12 @@
  * | EoflaOE  | 6/13/2021 | Initial release
  */
 
-using KS.ConsoleBase;
 using KS.Modifications;
-using KS.Shell.ShellBase;
 using KS.Misc.Writers.ConsoleWriters;
+using KS.Shell.ShellBase.Commands;
 using System.Collections.Generic;
+using KS.ConsoleBase.Colors;
+using KS.Shell.ShellBase.Shells;
 
 namespace HelloWorld3
 {
@@ -44,8 +45,8 @@ namespace HelloWorld3
             Name = "Hello World";
             ModPart = "Multiple commands";
             Version = "1.0.0";
-            Commands = new Dictionary<string, CommandInfo> { { "sayhello", new CommandInfo("sayhello", ShellType.Shell, "Say Hello", new[] { "" }, false, 0, new SayHello()) },
-                                                             { "goodbye", new CommandInfo("goodbye", ShellType.Shell, "Say Goodbye", new[] { "" }, false, 0, new Goodbye()) } };
+            Commands = new Dictionary<string, CommandInfo> { { "sayhello", new CommandInfo("sayhello", ShellType.Shell, "Say Hello", new CommandArgumentInfo(new[] { "" }, false, 0), new SayHello()) },
+                                                             { "goodbye", new CommandInfo("goodbye", ShellType.Shell, "Say Goodbye", new CommandArgumentInfo(new[] { "" }, false, 0), new Goodbye()) } };
 
             TextWriterColor.Write("Hello World!", true, ColorTools.ColTypes.Neutral);
         }
