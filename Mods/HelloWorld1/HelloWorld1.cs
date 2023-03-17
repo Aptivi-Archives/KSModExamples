@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) EoflaOE and its companies. All rights reserved.
+ * Copyright (c) Aptivi. All rights reserved.
  * 
  * Name: HelloWorld1.cs
  * Description: Entry point for the HelloWorld1 mod
@@ -9,7 +9,7 @@
  * 
  * | Author   | Date      | Description
  * +----------+-----------+--------------
- * | EoflaOE  | 6/12/2021 | Initial release
+ * | Aptivi   | 6/12/2021 | Initial release
  */
 
 using KS.Modifications;

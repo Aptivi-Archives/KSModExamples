@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) EoflaOE and its companies. All rights reserved.
+ * Copyright (c) Aptivi. All rights reserved.
  * 
  * Name: EventHandler3.cs
  * Description: Entry point for the EventHandler3 mod
@@ -9,7 +9,7 @@
  * 
  * | Author   | Date      | Description
  * +----------+-----------+--------------
- * | EoflaOE  | 7/2/2021  | Initial release
+ * | Aptivi   | 7/2/2021  | Initial release
  */
 
 using KS.Modifications;

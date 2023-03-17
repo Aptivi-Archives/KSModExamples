@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) EoflaOE and its companies. All rights reserved.
+ * Copyright (c) Aptivi. All rights reserved.
  * 
  * Name: HelloWorld2.cs
  * Description: Entry point for the HelloWorld2 mod
@@ -9,8 +9,8 @@
  * 
  * | Author   | Date      | Description
  * +----------+-----------+--------------
- * | EoflaOE  | 6/12/2021 | Initial release
- * | EoflaOE  | 6/13/2022 | Used CommandExecutor instead of interface
+ * | Aptivi   | 6/12/2021 | Initial release
+ * | Aptivi   | 6/13/2022 | Used CommandExecutor instead of interface
  */
 
 using KS.Modifications;

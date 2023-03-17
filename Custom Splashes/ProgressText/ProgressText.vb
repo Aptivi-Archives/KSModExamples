@@ -1,5 +1,5 @@
 ﻿'
-' Copyright (c) EoflaOE and its companies. All rights reserved.
+' Copyright (c) Aptivi. All rights reserved.
 ' 
 ' Name: ProgressText.vb
 ' Description: Entry point for the ProgressText custom splash
@@ -9,7 +9,7 @@
 ' 
 ' | Author   | Date      | Description
 ' +----------+-----------+--------------
-' | EoflaOE  | 5/2/2022  | Initial release
+' | Aptivi   | 5/2/2022  | Initial release
 '
 
 Imports KS.ConsoleBase

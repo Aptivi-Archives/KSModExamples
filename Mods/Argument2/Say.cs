@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright (c) EoflaOE and its companies. All rights reserved.
+ * Copyright (c) Aptivi. All rights reserved.
  * 
  * Name: Say.cs
  * Description: Command entry point for "say"
@@ -9,7 +9,7 @@
  * 
  * | Author   | Date      | Description
  * +----------+-----------+--------------
- * | EoflaOE  | 6/13/2022 | Initial release
+ * | Aptivi   | 6/13/2022 | Initial release
  */
 
 using KS.ConsoleBase.Colors;
