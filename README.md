@@ -6,4 +6,4 @@ To check them out, build the solution yourself using Microsoft Visual Studio or 
 
 Select the version in the branch appropriate to your version series of KS, like if you're going to use these examples in the 0.0.16.x series, choose the `0.0.16.x` branch.
 
-This repo is copyright (c) EoflaOE and its companies - All rights reserved.
+This repo is copyright (c) Aptivi - All rights reserved.

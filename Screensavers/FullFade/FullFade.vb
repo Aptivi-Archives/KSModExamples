@@ -1,5 +1,5 @@
 ﻿'
-' Copyright (c) EoflaOE and its companies. All rights reserved.
+' Copyright (c) Aptivi. All rights reserved.
 ' 
 ' Name: FullFade.vb
 ' Description: Entry point for the FullFade screensaver
@@ -9,8 +9,8 @@
 ' 
 ' | Author   | Date      | Description
 ' +----------+-----------+--------------
-' | EoflaOE  | 6/13/2021 | Initial release
-' | EoflaOE  | 7/11/2022 | Changed implementation to IScreensaver and BaseScreensaver
+' | Aptivi   | 6/13/2021 | Initial release
+' | Aptivi   | 7/11/2022 | Changed implementation to IScreensaver and BaseScreensaver
 '
 
 Imports KS.ConsoleBase
